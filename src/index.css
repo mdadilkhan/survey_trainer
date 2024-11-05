@@ -1,0 +1,57 @@
+/* index.css or App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #FCFCFC;
+    background-position: center;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+  }
+ 
+  html{
+    font-size: 62.5%;
+  } 
+
+  .react-multiple-carousel__arrow--left {
+    left: 0px !important; /* Adjust this value to move it more to the left */
+  }
+  
+  /* Move the right arrow further right */
+  .react-multiple-carousel__arrow--right {
+    right: 0px !important; /* Adjust this value to move it more to the right */
+  }
+
+
+
+
+.slider {
+  margin:0 20px;
+  overflow:"hidden";
+  padding:2rem 0;
+}
+
+.slider img {
+  width: 100%;
+  border-radius:10px;
+}
+
+.react-multi-carousel-list {
+padding: 0rem 0 2rem 0;
+}
+
+.custom-dot-list-style button{
+border: none;
+background: #C6B5E2;
+}
+.react-multi-carousel-dot.react-multi-carousel-dot--active button{
+background: #C6B5E2 !important;
+}
