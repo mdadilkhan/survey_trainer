@@ -43,19 +43,19 @@ function UserLogin() {
   };
 
   return (
-    <div className="w-full flex p-[10rem] mt-[15rem] justify-center gap-[10rem]">
-      <div className="w-[30%] justify-end">
+    <div className="w-full flex p-[10rem] mt-[5rem] justify-center gap-[5rem]">
+      <div className="w-[50%] justify-center flex">
         {/* Image section */}
-        <img src={Login} alt="Login Illustration" />
+        <img src={Login} alt="Login Illustration" className="w-[70%]"/>
       </div>
-      <div className="p-8 rounded-lg w-1/2">
+      <div className="p-8 rounded-lg w-[50%]">
         <h2 className="text-[3.2rem] font-nunito font-semibold text-p-1 text-left mb-2">
           Trainer Dashboard Login
         </h2>
         <p className="text-left font-nunito text-[1.6rem] mb-8">
           Welcome to Analytics Dashboards
         </p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="w-[70%]">
           <div className="mb-4">
             <label
               className="block text-[1.4rem] font-nunito font-medium mb-2"
@@ -69,7 +69,7 @@ function UserLogin() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="w-[44rem] h-[6rem] px-4 py-2 border rounded-2xl font-nunito font-normal text-[1.8rem]"
+              className="w-[100%] h-[6rem] px-4 py-2 border rounded-2xl font-nunito font-normal text-[1.8rem]"
               required
             />
           </div>
@@ -86,13 +86,12 @@ function UserLogin() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              className="w-[44rem] h-[6rem] px-4 py-2 border rounded-2xl font-nunito font-normal text-[1.8rem] pr-12"
+              className="w-[100%] h-[6rem] px-4 py-2 border rounded-2xl font-nunito font-normal text-[1.8rem] pr-12"
               required
             />
-            {/* Eye icon for showing/hiding password */}
             <span
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-500"
+              className="absolute right-[2rem] top-1/2 cursor-pointer text-gray-500"
             >
               {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
             </span>
@@ -100,7 +99,7 @@ function UserLogin() {
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
           <button
             type="submit"
-            className="w-[44rem] bg-p-1 h-[6rem] px-4 py-2 border rounded-2xl font-nunito font-normal mt-[4rem] text-[2.4rem] text-white"
+            className="w-[100%] bg-p-1 h-[6rem] px-4 py-2 border rounded-2xl font-nunito font-normal mt-[4rem] text-[2.4rem] text-white"
           >
             Log in
           </button>
