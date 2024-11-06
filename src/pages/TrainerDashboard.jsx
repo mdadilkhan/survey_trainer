@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell, LabelList } from "recharts";
 import axios from "axios";
 import { API_URL } from "../constant/APIConstant";
 import { useQuestionContext } from "../context/QuestionContext";
@@ -128,7 +128,7 @@ const TrainerDashboard = () => {
               <h2>{questionData?.questionText}</h2>
             </div>
           </h2>
-          <div className="flex justify-center gap-4 mt-2 items-center">
+          <div className="flex justify-center gap-2 mt-2 items-center">
             <button
               onClick={prevQuestion}
               disabled={questionIndex === 0}
@@ -139,7 +139,7 @@ const TrainerDashboard = () => {
             <div className="w-full flex flex-wrap h-[20vh] mx-[2rem]">
               {questionData?.options?.map((option, index) => (
                 <span
-                  className={`w-[50%] flex gap-8 text-[1.5rem] font-nunito items-center text-[#393939]`}
+                  className={`w-[50%] flex gap-2 text-[1.5rem] font-nunito items-center text-[#393939]`}
                   key={index}
                 >
                   <h2>{String.fromCharCode(65 + index)}.</h2>
@@ -166,8 +166,9 @@ const TrainerDashboard = () => {
             >
               <XAxis dataKey="label" tick={{ fill: "#666", fontSize: 14 }} />
               <YAxis tick={{ fill: "#666", fontSize: 14 }} />
-              <Tooltip />
+              <Tooltip cursor={{ fill: "transparent" }}/>
               <Bar dataKey="percentage" barSize={100}>
+              <LabelList dataKey="percentage" position="top" fill="#000" fontSize={14} /> {/* Show percentage on top */}
                 {questionData.options.map((option, index) => (
                   <Cell
                     key={`cell-${index}`}
