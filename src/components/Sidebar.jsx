@@ -26,7 +26,7 @@ const Sidebar = () => {
   return (
     <Menu
       mode="inline"
-      className="h-[100vh] w-[30rem] bg-white gap-6 mt-[2rem]"
+      className="h-[100vh] w-[30rem] bg-white gap-6"
       selectedKeys={[String(questionIndex)]}
       openKeys={openKeys}
       onOpenChange={(keys) => setOpenKeys(keys)}
