@@ -39,7 +39,10 @@ const Sidebar = () => {
           <span className="font-bold font-nunito">Overall Dashboard</span>
         }
         className={`font-bold font-nunito text-p-1 ${
-          location.pathname ==="/trainer-dashboard"? "bg-[#9C81CC]  text-white ":"bg-blue text-black"}`}
+          location.pathname === "/trainer-dashboard"
+            ? "overview-dashboard-active"
+            : "overview-dashboard-inactive"
+        }`}      
         onTitleClick={handleOverallDashboardClick} 
       >
         <div className="bg-white">

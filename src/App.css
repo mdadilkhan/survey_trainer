@@ -1,4 +1,6 @@
-:where(.css-dev-only-do-not-override-5wsri9).ant-menu-light .ant-menu-item-selected, :where(.css-dev-only-do-not-override-5wsri9).ant-menu-light>.ant-menu .ant-menu-item-selected {
-  background-color: #F4EDFF;
-  color: #000;
+.overview-dashboard-active > .ant-menu-submenu-title {
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  background-color: #9C81CC;
+  color: white;
 }
