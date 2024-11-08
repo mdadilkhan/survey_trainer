@@ -63,7 +63,7 @@ const Sidebar = () => {
       </SubMenu>
 
       <Menu.Item
-        className={`my-2 mx-2 px-6 py-2 rounded transition-colors duration-200 ${
+        className={`my-2 mx-2 px-6 py-2 rounded transition-colors font-semibold duration-200 no-hover ${
           location.pathname === "/session3"
             ? "bg-[#9C81CC] text-white"
             : "bg-white hover:bg-gray-100"
@@ -74,7 +74,7 @@ const Sidebar = () => {
       </Menu.Item>
 
       <Menu.Item
-        className={`my-2 mx-2 px-6 py-2 rounded  text-white transition-colors duration-200  ${
+        className={`my-2 mx-2 px-6 py-2 rounded  text-white transition-colors font-semibold duration-200 no-hover ${
           location.pathname === "/session4"
             ? "bg-[#9C81CC] text-white"
             : "bg-white hover:bg-gray-100"
