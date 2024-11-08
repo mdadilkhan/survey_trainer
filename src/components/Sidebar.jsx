@@ -51,8 +51,8 @@ const Sidebar = () => {
             key={index}
             className={`px-6 py-2 transition-colors duration-200 my-1 rounded ${
               index === questionIndex
-                ? "hover:bg-purple-400 text-white"
-                : "bg-white hover:bg-gray-100"
+                ? "bg-purple-100 text-white"
+                : "bg-white"
             }`}
             onClick={() => setQuestionIndex(index)}
           >
