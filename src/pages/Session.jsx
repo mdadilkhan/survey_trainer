@@ -72,7 +72,7 @@ const Session = () => {
           <img src={Clipboard} alt="icon" className="w-[2.5rem] h-[2.5rem] mb-2" />
           <div className="w-[1px] bg-[#E3E3EC] h-[80%]" />
           <div className="flex flex-col">
-            <h3 className="text-[1.4rem] font-nunito font-semibold">Total Response</h3>
+            <h3 className="text-[1.4rem] font-nunito font-semibold">Today's Response</h3>
             <p className="text-[2.4rem] font-nunito font-bold">{statisticData?.totalResponses}</p>
           </div>
         </div>
