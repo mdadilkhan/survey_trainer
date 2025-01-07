@@ -26,7 +26,7 @@ const Sidebar = () => {
   return (
     <Menu
       mode="inline"
-      className="h-[100vh] w-[30rem] bg-white gap-6 mt-[2rem]"
+      className="h-[100vh] w-[30rem] bg-white gap-6"
       selectedKeys={[String(questionIndex)]}
       openKeys={openKeys}
       onOpenChange={(keys) => setOpenKeys(keys)}
@@ -39,7 +39,10 @@ const Sidebar = () => {
           <span className="font-bold font-nunito">Overall Dashboard</span>
         }
         className={`font-bold font-nunito text-p-1 ${
-          location.pathname ==="/trainer-dashboard"? "bg-[#9C81CC]  text-white ":"bg-blue text-black"}`}
+          location.pathname === "/trainer-dashboard"
+            ? "overview-dashboard-active"
+            : "overview-dashboard-inactive"
+        }`}      
         onTitleClick={handleOverallDashboardClick} 
       >
         <div className="bg-white">
@@ -48,8 +51,8 @@ const Sidebar = () => {
             key={index}
             className={`px-6 py-2 transition-colors duration-200 my-1 rounded ${
               index === questionIndex
-                ? "hover:bg-purple-400 text-white"
-                : "bg-white hover:bg-gray-100"
+                ? "bg-purple-100 text-white"
+                : "bg-white"
             }`}
             onClick={() => setQuestionIndex(index)}
           >
@@ -60,7 +63,7 @@ const Sidebar = () => {
       </SubMenu>
 
       <Menu.Item
-        className={`my-2 mx-2 px-6 py-2 rounded transition-colors duration-200 ${
+        className={`my-2 mx-2 px-6 py-2 rounded transition-colors font-semibold duration-200 no-hover ${
           location.pathname === "/session3"
             ? "bg-[#9C81CC] text-white"
             : "bg-white hover:bg-gray-100"
@@ -71,7 +74,7 @@ const Sidebar = () => {
       </Menu.Item>
 
       <Menu.Item
-        className={`my-2 mx-2 px-6 py-2 rounded  text-white transition-colors duration-200  ${
+        className={`my-2 mx-2 px-6 py-2 rounded  text-white transition-colors font-semibold duration-200 no-hover ${
           location.pathname === "/session4"
             ? "bg-[#9C81CC] text-white"
             : "bg-white hover:bg-gray-100"

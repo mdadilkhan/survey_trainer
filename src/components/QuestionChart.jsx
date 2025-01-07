@@ -46,15 +46,21 @@ const QuestionChart = ({ questionData, questionIndex }) => {
         {questionData && (
           <BarChart
             width={900}
-            height={350}
+            height={400}
             data={questionData.options}
             className="mx-auto"
           >
             <XAxis dataKey="label" tick={{ fill: "#666", fontSize: 14 }} />
-            <YAxis tick={{ fill: "#666", fontSize: 14 }} />
-            <Tooltip cursor={{ fill: "transparent" }}/>
+            <YAxis
+              tick={{ fill: "#666", fontSize: 14 }}
+              domain={[0, 100]} // Set the Y-axis to a fixed range
+              allowDataOverflow={false} // Prevent overflow beyond the defined domain
+              type="number" // Ensure it's a numeric axis
+              interval={0} // Show all ticks
+            />
+            <Tooltip cursor={{ fill: "transparent" }} />
             <Bar dataKey="percentage" barSize={100}>
-            <LabelList dataKey="percentage" position="top" fill="#000" fontSize={14} />
+            <LabelList dataKey="percentage" position="top" fill="#000" fontSize={14} allowOverflow/> 
               {questionData.options.map((option, index) => (
                 <Cell
                   key={`cell-${index}`}

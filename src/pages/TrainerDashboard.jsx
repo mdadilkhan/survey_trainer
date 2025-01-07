@@ -71,7 +71,7 @@ const TrainerDashboard = () => {
         Overview
       </h2>
       <div className="flex gap-[5rem] mb-8 w-full px-[7rem]">
-        <div className="flex items-center gap-[2rem] px-[2rem] py-[1rem] bg-[#fffff] rounded-[1rem] w-[20%] shadow-md border-l-[6px] border-[#9C81CC]">
+        <div className="flex items-center gap-[2rem] px-[2rem] py-[1rem] bg-[#fffff] rounded-[1rem] w-[25%] shadow-md border-l-[6px] border-[#9C81CC]">
           <img
             src={Clipboard}
             alt="icon"
@@ -160,15 +160,21 @@ const TrainerDashboard = () => {
           {questionData && (
             <BarChart
               width={900}
-              height={350}
+              height={400}
               data={questionData.options}
               className="mx-auto"
             >
               <XAxis dataKey="label" tick={{ fill: "#666", fontSize: 14 }} />
-              <YAxis tick={{ fill: "#666", fontSize: 14 }} />
+              <YAxis
+              tick={{ fill: "#666", fontSize: 14 }}
+              domain={[0, 100]} // Set the Y-axis to a fixed range
+              allowDataOverflow={false} // Prevent overflow beyond the defined domain
+              type="number" // Ensure it's a numeric axis
+              interval={0} // Show all ticks
+            />
               <Tooltip cursor={{ fill: "transparent" }}/>
               <Bar dataKey="percentage" barSize={100}>
-              <LabelList dataKey="percentage" position="top" fill="#000" fontSize={14} /> {/* Show percentage on top */}
+              <LabelList dataKey="percentage" position="top" fill="#000" fontSize={14} allowOverflow/> 
                 {questionData.options.map((option, index) => (
                   <Cell
                     key={`cell-${index}`}
