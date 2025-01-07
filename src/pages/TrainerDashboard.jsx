@@ -139,7 +139,7 @@ const TrainerDashboard = () => {
             <div className="w-full flex flex-wrap h-[20vh] mx-[2rem]">
               {questionData?.options?.map((option, index) => (
                 <span
-                  className={`w-[50%] flex gap-2 text-[1.5rem] font-nunito items-center text-[#393939]`}
+                  className={`w-[28%] flex gap-2 text-[1.5rem] font-nunito items-center text-[#393939]`}
                   key={index}
                 >
                   <h2>{String.fromCharCode(65 + index)}.</h2>
