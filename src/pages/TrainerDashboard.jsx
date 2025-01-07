@@ -80,10 +80,10 @@ const TrainerDashboard = () => {
           <div className="w-[1px] bg-[#E3E3EC] h-[80%]" />
           <div className="flex flex-col">
             <h3 className="text-[1.4rem] font-nunito font-semibold">
-              Total Response
+              Todays Response
             </h3>
             <p className="text-[2.4rem] font-nunito font-bold">
-              {statisticData?.totalResponses}
+              {statisticData?.todaysResponses}
             </p>
           </div>
         </div>
@@ -139,7 +139,7 @@ const TrainerDashboard = () => {
             <div className="w-full flex flex-wrap h-[20vh] mx-[2rem]">
               {questionData?.options?.map((option, index) => (
                 <span
-                  className={`w-[50%] flex gap-2 text-[1.5rem] font-nunito items-center text-[#393939]`}
+                  className={`w-[28%] flex gap-2 text-[1.5rem] font-nunito items-center text-[#393939]`}
                   key={index}
                 >
                   <h2>{String.fromCharCode(65 + index)}.</h2>
